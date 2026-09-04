@@ -42,7 +42,7 @@ export function Footer() {
           <h3 className="text-sm font-semibold text-white">Get in touch</h3>
           <ul className="mt-4 space-y-2 text-sm">
             <li>hello@dgorkhatech.com</li>
-            <li>+1 (555) 010-2030</li>
+            <li>+61414040275</li>
           </ul>
         </div>
       </Container>
