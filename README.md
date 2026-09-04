@@ -78,3 +78,13 @@ npm run dev                         # starts the site on http://localhost:3000
 - `helmet`, scoped CORS, and rate limiting are applied on the API (especially the contact form and
   login endpoints)
 - Change `JWT_SECRET` and the seeded admin password before deploying anywhere public
+
+## Deploy on Render
+
+The repository includes `render.yaml` for a PostgreSQL database, API service, and Next.js service.
+
+1. In Render, choose **New > Blueprint** and connect this GitHub repository.
+2. Apply the blueprint and set `FRONTEND_ORIGIN` on `dgorkhatech-api` to the deployed frontend URL.
+3. Set `NEXT_PUBLIC_API_URL` on `dgorkhatech-frontend` to the deployed API URL, for example `https://dgorkhatech-api.onrender.com`.
+4. Set a strong `SEED_ADMIN_PASSWORD`, then run `npm run db:seed` from a one-off backend shell or seed the production database using the Render shell.
+5. Redeploy the frontend after setting `NEXT_PUBLIC_API_URL`, because Next.js embeds that value during its build.
